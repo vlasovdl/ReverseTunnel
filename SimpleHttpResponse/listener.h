@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <memory>
 #include <boost/asio.hpp>
 
@@ -14,7 +14,7 @@ public:
 	);
 	
 	~listener();
-
+	// Добавлен комментарий для возможности проверки на GitHub
 	void run();
 protected:
 	void do_accept();
