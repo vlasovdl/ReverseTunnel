@@ -24,7 +24,7 @@ listener::listener(boost::asio::io_context & ioc, boost::asio::ip::tcp::endpoint
 		return;
 	}
 
-	// привязываем адрес
+	// привязываем 
 	acceptor_.bind(endpoint, ec);
 	if (ec)
 	{
