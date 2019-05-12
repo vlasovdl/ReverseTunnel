@@ -8,7 +8,7 @@ listener::listener(boost::asio::io_context & ioc, boost::asio::ip::tcp::endpoint
 {
 	boost::system::error_code ec;
 
-	// открываем акцептор
+	// Г®ГІГЄГ°Г»ГўГ ГҐГ¬ Г ГЄГ¶ГҐГЇГІГ®Г°
 	acceptor_.open(endpoint.protocol(), ec);
 	if (ec)
 	{
@@ -16,7 +16,7 @@ listener::listener(boost::asio::io_context & ioc, boost::asio::ip::tcp::endpoint
 		return;
 	}
 
-	// настраиваем на повторное использование адреса
+	// РЅР°СЃС‚СЂР°РёРІР°РµРј РЅР° РїРѕРІС‚РѕСЂРЅРѕРµ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ Р°РґСЂРµСЃР°
 	acceptor_.set_option(boost::asio::socket_base::reuse_address(true), ec);
 	if (ec)
 	{
@@ -24,7 +24,7 @@ listener::listener(boost::asio::io_context & ioc, boost::asio::ip::tcp::endpoint
 		return;
 	}
 
-	// привязываем 
+	// ГЇГ°ГЁГўГїГ§Г»ГўГ ГҐГ¬ 
 	acceptor_.bind(endpoint, ec);
 	if (ec)
 	{
@@ -32,7 +32,7 @@ listener::listener(boost::asio::io_context & ioc, boost::asio::ip::tcp::endpoint
 		return;
 	}
 
-	// переводим акцептор в режим прослушки
+	// ГЇГҐГ°ГҐГўГ®Г¤ГЁГ¬ Г ГЄГ¶ГҐГЇГІГ®Г° Гў Г°ГҐГ¦ГЁГ¬ ГЇГ°Г®Г±Г«ГіГёГЄГЁ
 	acceptor_.listen(boost::asio::socket_base::max_listen_connections, ec);
 	if (ec)
 	{
